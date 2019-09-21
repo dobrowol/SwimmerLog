@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">SwimmerLog</string>
+    <string name="filter_title">Swimmer Log</string>
+    <string name="distance">Distance</string>
+    <string name="number_of_repetitions">Number of repetitions</string>
+    <string name="number_of_sets">Number of sets</string>
+    <string name="description">Description</string>
+    <string name="submit">submit</string>
+    <string name="WarningSomeEmpty">Please Fill Correct Details</string>
+    <string name="specificity">Specificity</string>
+    <string name="training_list">training list</string>
+    <string name="intensity_from_1_to_5">Intensity from 1 to 5</string>
+    <string name="dash">-</string>
+    <string name="viewGithub">View on GitHub</string>
+    <string name="reportProblem">Problem Report</string>
+    <string name="viewWebsite">Developer Website</string>
+    <string name="actionSave">Save to Gallery</string>
+
+    <string name="animateX">Animate X</string>
+    <string name="animateY">Animate Y</string>
+    <string name="animateXY">Animate XY</string>
+    <string name="delete">DELETE</string>
+
+    <string name="actionToggleValues">Toggle Values</string>
+    <string name="actionToggleYValues">Toggle Y-Values</string>
+    <string name="actionToggleXValues">Toggle X-Values</string>
+
+    <string name="actionToggleIcons">Toggle Icons</string>
+    <string name="actionToggleHighlight">Toggle Highlight</string>
+    <string name="actionTogglePinch">Toggle PinchZoom</string>
+    <string name="actionToggleAutoScale">Toggle Auto Scale</string>
+
+    <string name="actionToggleLineValues">Toggle Line Values</string>
+    <string name="actionToggleBarValues">Toggle Bar Values</string>
+    <string name="actionToggleBarBorders">Toggle Bar Borders</string>
+    <string name="actionToggleFilled">Toggle Filled</string>
+    <string name="actionToggleCircles">Toggle Circles</string>
+    <string name="actionToggleCandleShadow">Toggle Shadow Color</string>
+
+    <string name="actionToggleCubic">Toggle Cubic</string>
+    <string name="actionToggleStepped">Toggle Stepped</string>
+    <string name="actionToggleHorizontalCubic">Toggle Horizontal Cubic</string>
+
+    <string name="actionAddEntry">Add Entry</string>
+    <string name="actionFeedMultiple">Add Multiple</string>
+    <string name="actionRemoveEntry">Remove Entry</string>
+    <string name="actionAddDataSet">Add Data Set</string>
+    <string name="actionRemoveDataSet">Remove Data Set</string>
+    <string name="actionClearChart">Clear chart</string>
+
+    <string name="actionTogglePercent">Toggle Percent</string>
+    <string name="actionToggleMinAngles">Toggle Minimum Angles</string>
+    <string name="actionToggleHole">Toggle Hole</string>
+    <string name="actionToggleCurvedSlices">Toggle Curved Slices</string>
+    <string name="actionDrawCenterText">Draw Center Text</string>
+    <string name="actionToggleHighlightCircle">Toggle Highlight Circle</string>
+    <string name="actionToggleRotation">Toggle Rotation</string>
+    <string name="actionToggleSpin">Spin Animation</string>
+    <string name="create_training">Create Training</string>
+    <string name="specific">SPECIFIC</string>
+    <string name="competitive">COMPETITIVE</string>
+    <string name="general">GENERAL</string>
+    <string name="add_goal">Add goal</string>
+    <string name="add_exercise">Add exercise</string>
+    <string name="updateBtn">Update</string>
+    <string name="add_exercise_text">Add</string>
+    <string name="show_chart">Show chart</string>
+    <string name="delete_goal">Delete goal</string>
+    <string name="edit_goal">Edit goal</string>
+    <string name="menu_search">search</string>
+    <string name="menu_settings">settings</string>
+    <string name="menu_navigation">navigation</string>
+    <string name="menu_home">home</string>
+    <string name="action_setting">Setting</string>
+</resources>
