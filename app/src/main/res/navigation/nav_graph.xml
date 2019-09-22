@@ -17,7 +17,7 @@
         android:id="@+id/characteristicsFragment"
         android:name="com.example.swimmerslog.CharacteristicsFragment"
         android:label="goals_fragment"
-        tools:layout="@layout/goals_fragment" >
+        tools:layout="@layout/characteristics_fragment" >
         <action
             android:id="@+id/action_characteristicsFragment_to_trainingListFragment"
             app:destination="@id/trainingListFragment"

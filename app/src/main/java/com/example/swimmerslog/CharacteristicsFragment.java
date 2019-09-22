@@ -3,11 +3,9 @@ package com.example.swimmerslog;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.graphics.Rect;
 import android.os.Bundle;
 
 import androidx.appcompat.view.ActionMode;
@@ -15,14 +13,12 @@ import androidx.appcompat.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ViewSwitcher;
 
 import com.example.swimmerslog.add_goal.Goal;
 import com.example.swimmerslog.add_training.Training;
 import com.example.swimmerslog.common.TrainingGoalJoin;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -30,13 +26,11 @@ import java.util.Locale;
 import java.util.UUID;
 
 
-public class CharacteristicsFragment extends Fragment implements  GoalListViewAdapter.OnItemClickListener {
+public class CharacteristicsFragment extends Fragment  {
 
     public static final String TRAINING = "training";
     private RecyclerView goalRecyclerView;
-
-    private GoalListViewAdapter generalAdapter;
-
+    private CharacteristicListViewAdapter generalAdapter;
 
     private Training training;
 
@@ -45,7 +39,6 @@ public class CharacteristicsFragment extends Fragment implements  GoalListViewAd
     private FloatingActionButton fab_add_goal;
     private View rootView;
     ArrayList<String> goalList;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -57,68 +50,36 @@ public class CharacteristicsFragment extends Fragment implements  GoalListViewAd
         goalList.add("TIREDNESS");
         goalList.add("Intensity of training");
         rootView =
-                inflater.inflate(R.layout.goals_fragment, container, false);
-        goalRecyclerView = rootView.findViewById(R.id.goal_rv);
+                inflater.inflate(R.layout.characteristics_fragment, container, false);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false) {
-            @Override
-            public boolean requestChildRectangleOnScreen(@NonNull RecyclerView parent, @NonNull View child, @NonNull Rect rect, boolean immediate, boolean focusedChildVisible) {
+        goalRecyclerView = rootView.findViewById(R.id.characteristicsRv);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false);
 
-                if (((ViewGroup) child).getFocusedChild() instanceof ViewSwitcher) {
-                    return false;
-                }
-
-                return super.requestChildRectangleOnScreen(parent, child, rect, immediate, focusedChildVisible);
-            }
-        };
-
-        goalRecyclerView.setLayoutManager(linearLayoutManager);
-        goalRecyclerView.setFocusable(false);
-        goalRecyclerView.setNestedScrollingEnabled(true);
-        generalAdapter = new GoalListViewAdapter(this, getContext());
-        generalAdapter.setOnItemClickListener(this);
+        generalAdapter = new CharacteristicListViewAdapter(goalList);
         goalRecyclerView.setAdapter(generalAdapter);
 
-        goalRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),
-                DividerItemDecoration.VERTICAL));
-
-        editedGoal = null;
-
-        generalAdapter.setGoals(goalList);
-        generalAdapter.notifyDataSetChanged();
+        goalRecyclerView.setLayoutManager(layoutManager);
         initializeTraining();
         setAppBarTitle();
-        return inflater.inflate(R.layout.goals_fragment,
-                container, false);
-
-
+        return rootView;
     }
 
     private void initializeTraining(){
         training = new Training();
         training.date = new Date();
         training.id = UUID.randomUUID().toString();
-
     }
 
     private void setAppBarTitle() {
-        ((MainActivity) getActivity())
-                .setActionBarTitle("Your title");
          SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMM, dd - HH:mm", Locale.ENGLISH);
          String formatted = sdf.format(training.date);
         ((MainActivity) getActivity())
                 .setActionBarTitle(formatted);
-
     }
 
 
-
-
-    @Override
     public void onRatingBarChange(String trainingId, String goal, float rating) {
         TrainingGoalJoin trainingGoalJoin = new TrainingGoalJoin(UUID.randomUUID().toString(), trainingId, goal, (int)rating);
-
-
     }
 
     /*public void showAlert(String text){
@@ -153,9 +114,8 @@ public class CharacteristicsFragment extends Fragment implements  GoalListViewAd
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
-        outState.putSerializable(TRAINING, (Serializable) training);
+        outState.putSerializable(TRAINING, training);
         super.onSaveInstanceState(outState);
-
     }
 
 
