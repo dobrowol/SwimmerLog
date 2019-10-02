@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/trainingListFragment"
-        android:name="com.example.swimmerslog.TrainingListFragment"
+        android:name="dobrowol.swimmerlog.TrainingListFragment"
         android:label="TrainingListFragment" >
         <action
             android:id="@+id/action_trainingListFragment_to_characteristicsFragment"
@@ -15,13 +15,19 @@
     </fragment>
     <fragment
         android:id="@+id/characteristicsFragment"
-        android:name="com.example.swimmerslog.CharacteristicsFragment"
+        android:name="dobrowol.swimmerlog.CharacteristicsFragment"
         android:label="goals_fragment"
         tools:layout="@layout/characteristics_fragment" >
         <action
             android:id="@+id/action_characteristicsFragment_to_trainingListFragment"
             app:destination="@id/trainingListFragment"
             app:popUpTo="@+id/trainingListFragment" />
+        <argument
+            android:name="training"
+            app:nullable="true"
+            app:argType="dobrowol.swimmerlog.add_training.Training"
+            android:defaultValue="@null"/>
+
     </fragment>
 
 </navigation>
