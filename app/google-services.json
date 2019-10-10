@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "907181762872",
+    "firebase_url": "https://swimmerlog-ac53c.firebaseio.com",
+    "project_id": "swimmerlog-ac53c",
+    "storage_bucket": "swimmerlog-ac53c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907181762872:android:dc49af6b1cffc4135039cd",
+        "android_client_info": {
+          "package_name": "dobrowol.swimmerlog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907181762872-dn9dkjpsaoi259mlc5fa082bdnthfm08.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCj37O6GOaiGZ2tmRGEjk7JvsPQNb7iVFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907181762872-dn9dkjpsaoi259mlc5fa082bdnthfm08.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

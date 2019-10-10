@@ -14,7 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.swimmerlog.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
 
 import dobrowol.swimmerlog.add_training.Training;
 import dobrowol.swimmerlog.add_training.TrainingViewModel;
@@ -25,6 +28,7 @@ public class TrainingListFragment extends Fragment implements AllTrainingRecycle
     AllTrainingRecyclerViewAdapter adapter;
     List<Training> trainings;
     TrainingViewModel trainingViewModel;
+    private String name;
 
 
     @Override
@@ -33,6 +37,10 @@ public class TrainingListFragment extends Fragment implements AllTrainingRecycle
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.training_list_fragment_layout, container, false);
 
+        if (getArguments() != null) {
+            name = TrainingListFragmentArgs.fromBundle(getArguments()).getUser();
+            setAppBarTitle();
+        }
         recyclerView = rootView.findViewById(R.id.list);
         // Set the adapter
 
@@ -53,6 +61,12 @@ public class TrainingListFragment extends Fragment implements AllTrainingRecycle
         });
 
         return rootView;
+    }
+
+    private void setAppBarTitle() {
+        String formatted = "Hello " + name;
+        ((MainActivity) Objects.requireNonNull(getActivity()))
+                .setActionBarTitle(formatted);
     }
 
     @Override

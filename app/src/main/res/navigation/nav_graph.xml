@@ -3,8 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/trainingListFragment">
+    app:startDestination="@id/authenticatorActivity">
 
+    <fragment
+        android:id="@+id/authenticatorActivity"
+        android:label="login_activity"
+        android:name="dobrowol.swimmerlog.authenticator.AuthenticatorFragment"
+        tools:layout="@layout/login_activity" >
+        <action
+            android:id="@+id/action_authenticatorActivity_to_trainingListFragment"
+            app:destination="@id/trainingListFragment" />
+
+    </fragment>
     <fragment
         android:id="@+id/trainingListFragment"
         android:name="dobrowol.swimmerlog.TrainingListFragment"
@@ -12,6 +22,9 @@
         <action
             android:id="@+id/action_trainingListFragment_to_characteristicsFragment"
             app:destination="@id/characteristicsFragment" />
+        <argument
+            android:name="user"
+            app:argType="string"/>
     </fragment>
     <fragment
         android:id="@+id/characteristicsFragment"
@@ -29,5 +42,6 @@
             android:defaultValue="@null"/>
 
     </fragment>
+
 
 </navigation>
